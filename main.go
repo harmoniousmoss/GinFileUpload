@@ -1,19 +1,18 @@
 package main
 
 import (
-	"github.com/gin-gonic/gin"
+	"gingcs/route" // Replace with your project's module name
+
+	"github.com/joho/godotenv"
 )
 
 func main() {
-	// Initialize the Gin engine.
-	r := gin.Default()
+	// Load environment variables from .env file
+	godotenv.Load()
 
-	// Define a route and a handler function.
-	r.GET("/", func(c *gin.Context) {
-		// Respond with a plain text string
-		c.String(200, "Hello, Gin!")
-	})
+	// Setup the router
+	r := route.SetupRouter()
 
-	// Run the web server on port 8080.
+	// Start the server
 	r.Run() // listen and serve on 0.0.0.0:8080
 }
