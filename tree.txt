@@ -1,0 +1,10 @@
+handler
+ ┗ upload.go
+ route
+ ┗ router.go
+ .env
+ .env.example
+ .gitignore
+ go.mod
+ go.sum
+ main.go
